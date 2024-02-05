@@ -7,15 +7,12 @@ data() {
         emails: [],
     }
 },
-methods: {
-    randomEmail(){
-        this.emails = []
-        for (let i = 0; i < 10; i++) {
-            axios.get(this.url)
-            .then( (value) => this.emails.push(value.data.response))  
-        }
-
+mounted() {
+    for (let i = 0; i < 10; i++) {
+        axios.get(this.url)
+        .then( (value) => this.emails.push(value.data.response))
     }
 },
+
 
 }).mount('#app')
