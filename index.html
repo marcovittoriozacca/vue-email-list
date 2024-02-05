@@ -13,11 +13,11 @@
 
         <h1 class="text-capitalize text-center py-5 ">email list!</h1>
         <div class="container">
-
-            <ul>
-               <li v-for="(email, index) in emails" :key="index" >{{email}}</li>
-            </ul>
             <button @click="randomEmail" type="button" class="btn btn-primary py-2 px-4">Click to generate 10 emails</button>
+
+            <ul v-show="emails.length == 10">
+               <li class="my-2" v-for="(email, index) in emails" :key="index">{{email}}</li>
+            </ul>
         </div>
     </div>
 
